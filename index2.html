@@ -89,6 +89,16 @@
 
           contenedorLetras.innerHTML = cadena;
         }
+        function deCodificador(mensajeClave) {
+  mensajeClave = mensajeClave.toLowerCase();
+  let listKeys = ["enter", "imes", "ai", "ober", "ufat"];
+  for (key of listKeys) {
+    while (mensajeClave.match(key)) {
+      mensajeClave = mensajeClave.replace(key, key[0]);
+    }
+  }
+  return mensajeClave;
+}
       </script>
     </body>
   </head>
