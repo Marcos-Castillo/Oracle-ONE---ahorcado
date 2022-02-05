@@ -1,3 +1,10 @@
 body {
-    background-color: rgba(14, 92, 92, 0.3);
+  background-color: rgba(14, 92, 92, 0.3);
+}
+canvas {
+  margin: 10px;
+  border: 2px solid black;
+}
+div {
+  border: 2px solid black;
 }

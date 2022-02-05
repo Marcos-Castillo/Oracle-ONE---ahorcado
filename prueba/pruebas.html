@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Ahorcado</title>
+    <body>
+      <div class="container">
+        <h1>Adivina la palabra</h1>
+        <div>
+          vidas: <span id="vida">5</span> palabras adivinadas:<span
+            id="correctas"
+            >0</span
+          >
+        </div>
+        <div id="forma">
+          <div class="mb-3">
+            <label for="ingresoUsr"
+              >Solo una letra o podes arriesgar con la palabra</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              name="ingresoUsr"
+              id="ingresoUsr"
+            />
+            <br />
+            <button class="btn btn-primary mb-3" type="submit" id="comprobar">
+              Comprobar
+            </button>
+          </div>
+          <div class="mb-3">
+            <label for="resultado"
+              >cantidad de letras: <span id="largoPalabra"></span
+            ></label>
+            <input
+              class="form-control"
+              type="text"
+              name="resultado"
+              id="resultado"
+              readonly="true"
+            />
+            <br />
+            <button
+              class="btn btn-primary mb-3"
+              type="submit"
+              id="nuevaPalabra"
+            >
+              Nueva palabra
+            </button>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-3 fixed-bottom">
+          realizado por Marcos Castillo
+        </div>
+      </div>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"
+      ></script>
+
+      <script src="js/logica.js"></script>
+    </body>
+  </head>
+</html>
