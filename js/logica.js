@@ -1,4 +1,4 @@
-let listaPalabrasSecretas = ["AVE", "TELEFONO", "HIPOPOTAMO", "PIZZA"];
+let listaPalabrasSecretas = ["MURCIELAGO", "TELEFONO", "HIPOPOTAMO", "PIZZA","IGUANA","ANACONDA"];
 let btnNuevaPalabra = document.querySelector("#nuevaPalabra");
 let btnNuevoJuego = document.querySelector("#nuevaJuego");
 let contenedorAhorcado = document.querySelector("#contenedorAhorcado");
@@ -8,17 +8,34 @@ let vidas = 6;
 let palabraSecreta = "";
 let listaErrores = "";
 let descubiertoArray = [];
+let btnAgregar=document.querySelector("#btnAgregar");
+let inputNuevaPalabra=document.querySelector("#inputNuevaPalabra");
+inputNuevaPalabra.style.display = "none";
+btnAgregar.style.display = "none";
 //boton nueva palabra
 btnNuevaPalabra.addEventListener("click", function () {
-  let ingresoUsr = prompt("Ingrese nueva palabra.").toUpperCase();
+  //let ingresoUsr = prompt("Ingrese nueva palabra.").toUpperCase();
+  inputNuevaPalabra.style.display = "inline-flex";
+  btnAgregar.style.display = "inline-flex";
+
+  });
+//boton agregar nueva palabra
+btnAgregar.addEventListener("click", function () {
+  //let ingresoUsr = prompt("Ingrese nueva palabra.").toUpperCase();
+  let ingresoUsr = inputNuevaPalabra.value;
+  inputNuevaPalabra.value ="";
+  ingresoUsr=ingresoUsr.toUpperCase();
   const pattern = new RegExp("^[A-Z]+$", "i");
   if (pattern.test(ingresoUsr)) {
     listaPalabrasSecretas.push(ingresoUsr);
   }
+  inputNuevaPalabra.style.display = "none";
+  btnAgregar.style.display = "none";
 });
 //boton nuevo juego
 btnNuevoJuego.addEventListener("click", function () {
   nuevoJuego();
+  window.addEventListener("keydown", teclaPresionada)
 });
 function nuevoJuego() {
   contenedorAhorcado.style.display = "flex";
@@ -28,7 +45,6 @@ function nuevoJuego() {
   entradasIncorrectas.textContent = listaErrores.split("");
   resetGrafico();
   graficarAhorcado(6);
-  console.log(palabraSecreta);
   descubiertoArray = [];
   mostarPalabraSecreta();
   calcularDescubiertos()
@@ -49,7 +65,7 @@ function comprobarLetra(letra) {
     mostarPalabraSecreta();
     let palabraSecretaArray = palabraSecreta.split("");
     if(compararArray(palabraSecretaArray,descubiertoArray)){
-      swal("ganaste la palabra secreta era "+palabraSecreta);
+      swal("ganaste la palabra secreta era "+palabraSecreta,"","success");
       nuevoJuego()
     }
   } else {

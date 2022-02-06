@@ -1,7 +1,5 @@
 //captura las letras presionadas
 
-window.addEventListener("keydown", teclaPresionada)
-
 function teclaPresionada(e){    
     
     console.log(e.key);

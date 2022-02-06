@@ -5,13 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ahorcado</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+    crossorigin="anonymous"
+  />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="flexbox-container">
     <div id="menu">
-      <h1 >Ahorcado</h1>
-      <input type="button" value="Nuevo Juego" id="nuevaJuego" />
-      <input type="button" value="Agregar Palabra" id="nuevaPalabra" />
+      <h1 class="mb-3" >Ahorcado</h1>
+      <input type="button" class="mb-3" value="Nuevo Juego" id="nuevaJuego" />
+      <input type="button" class="mb-3" value="Agregar Palabra" id="nuevaPalabra" />
+      <input type="text" class="mb-3" name="" id="inputNuevaPalabra">
+      <input type="button"  class="mb-3" value="Confirmar" id="btnAgregar">
     </div>
 
     <div id="contenedorAhorcado">
@@ -22,11 +30,18 @@
       </div>
       
     </div>
-
+    <div class="footer-copyright text-center py-3 fixed-bottom">
+      Realizado por Marcos Castillo
+  </div>
 
     <script src="js/graficar.js"></script>
     <script src="js/validacionIngresos.js"></script>
     <script src="js/logica.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"
+  ></script>
   </body>
 </html>
