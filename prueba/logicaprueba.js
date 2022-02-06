@@ -1,5 +1,5 @@
 let btnComprobar = document.querySelector("#comprobar");
-let btnNuevaPalabra = document.querySelector("#nuevaPalabra");
+
 let resultado = document.querySelector("#resultado");
 let ingreso = document.querySelector("#ingresoUsr");
 let mostrarVida = document.querySelector("#vida");
@@ -17,7 +17,7 @@ btnNuevaPalabra.addEventListener("click", function () {
   resultado.value = "";
 });
 //logica
-let listaPalabrasSecretas = ["ave", "telefono", "hipopotamo", "pizza"];
+
 let palabraSecreta = "".toUpperCase();
 
 let palabraSecretaArray = palabraSecreta.split("");

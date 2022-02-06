@@ -8,25 +8,23 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-  
     <div>
-        <h1>Ahorcado</h1>
-      <input 
-      type="button" 
-      value="Nuevo Juego" 
-      />
-      <input
-        type="button"
-        value="Agregar Palabra"
-      />
+      <h1>Ahorcado</h1>
+      <input type="button" value="Nuevo Juego" id="nuevaJuego" />
+      <input type="button" value="Agregar Palabra" id="nuevaPalabra" />
     </div>
-    <div>
+    <div id="contenedorAhorcado">
       <canvas id="graficoAhorcado" width="400" height="600"></canvas>
-      <p>letras correctas</p>
-      <p>letras incorrectas</p>
+      <div id="contSup">
+        <p>letras correctas</p>
+        <p>errores letras incorrectas</p>
+      </div>
+      <div>Ganaste la palabra era XXX Perdiste la palabra era XXX</div>
     </div>
+
 
     <script src="js/graficar.js"></script>
     <script src="js/validacionIngresos.js"></script>
+    <script src="js/logica.js"></script>
   </body>
 </html>
