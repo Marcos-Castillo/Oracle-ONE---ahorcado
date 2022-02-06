@@ -3,18 +3,23 @@ body {
 }
 canvas {
   margin: 10px;
-  border: 2px solid black;
   width: 40%;
 }
 div {
-  border: 2px solid black;
   margin: 10px;
 }
-#contSuperior{
-    text-align: center;
-    margin: auto;
-
+#palabraSecreta {
+  text-align: center;
+  margin: auto;
+  letter-spacing: 10px;
+  font-size: 60px;
 }
 #contenedorAhorcado {
-    display: none;
+  display: none;
+}
+#entradasIncorrectas {
+  font-size: 30px;
+  color: tomato;
+  
+  font-weight: bold;
 }

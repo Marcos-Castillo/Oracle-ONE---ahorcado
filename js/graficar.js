@@ -1,7 +1,11 @@
 var c = document.querySelector("#graficoAhorcado");
 var ctx = c.getContext("2d");
-ctx.lineWidth = 10;
-ctx.strokeStyle = "steelblue";
+
+function resetGrafico() {
+  ctx.clearRect(0, 0, c.width, c.height);
+  ctx.lineWidth = 10;
+  ctx.strokeStyle = "steelblue";
+  ctx.beginPath();
   //barra vertical horca
   ctx.moveTo(50, 600);
   ctx.lineTo(50, 45);
@@ -15,9 +19,8 @@ ctx.strokeStyle = "steelblue";
   ctx.moveTo(250, 50);
   ctx.lineTo(250, 100);
   ctx.stroke();
-
+}
 function graficarAhorcado(vidas) {
-
   if (vidas < 6) {
     //cabeza error1
     ctx.strokeStyle = "tomato";
@@ -49,6 +52,10 @@ function graficarAhorcado(vidas) {
               ctx.moveTo(250, 400);
               ctx.lineTo(320, 480);
               ctx.stroke();
+              if (vidas < 0) {
+                alert("Fin del juego la palabra era " + palabraSecreta);
+                nuevoJuego()
+              }
             }
           }
         }
