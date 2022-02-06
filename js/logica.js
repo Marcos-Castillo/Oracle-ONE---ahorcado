@@ -7,6 +7,7 @@ let divPalabraSecreta = document.querySelector("#palabraSecreta");
 let vidas = 6;
 let palabraSecreta = "";
 let listaErrores = "";
+let descubiertoArray = [];
 //boton nueva palabra
 btnNuevaPalabra.addEventListener("click", function () {
   let ingresoUsr = prompt("Ingrese nueva palabra.").toUpperCase();
@@ -17,40 +18,90 @@ btnNuevaPalabra.addEventListener("click", function () {
 });
 //boton nuevo juego
 btnNuevoJuego.addEventListener("click", function () {
-  nuevoJuego()
+  nuevoJuego();
 });
-function nuevoJuego(){
+function nuevoJuego() {
   contenedorAhorcado.style.display = "flex";
   palabraSecreta = definirPalabrasSecretas();
   vidas = 6;
   listaErrores = "";
-  entradasIncorrectas.textContent= listaErrores.split("");
-  resetGrafico()
+  entradasIncorrectas.textContent = listaErrores.split("");
+  resetGrafico();
   graficarAhorcado(6);
   console.log(palabraSecreta);
   mostarPalabraSecreta();
+  descubiertoArray = [];
+  calcularDescubiertos()
 }
+//Sortea palabra secreta aleatoria del array
 function definirPalabrasSecretas() {
   return listaPalabrasSecretas[
     Math.floor(Math.random() * listaPalabrasSecretas.length)
   ];
 }
+//comprobar si el ingreso de texto esta en la palabra secreta
 function comprobarLetra(letra) {
   if (palabraSecreta.includes(letra)) {
-    console.log("incluido");
+    if (!descubiertoArray.includes(letra)) {
+      descubiertoArray.push(letra);
+    }
+    descubiertoArray = descubiertosOrdenado(descubiertoArray);
+    mostarPalabraSecreta();
+    let palabraSecretaArray = palabraSecreta.split("");
+    if(compararArray(palabraSecretaArray,descubiertoArray)){
+      alert("ganaste la palabra secreta era "+ palabraSecreta);
+      nuevoJuego()
+    }
   } else {
     if (!listaErrores.includes(letra)) {
       vidas--;
       listaErrores += letra;
-      entradasIncorrectas.textContent= listaErrores.split("");
+      entradasIncorrectas.textContent = listaErrores.split("");
     }
     graficarAhorcado(vidas);
   }
 }
-function mostarPalabraSecreta(){
+function mostarPalabraSecreta() {
+  divPalabraSecreta.textContent = calcularDescubiertos();
 
-  divPalabraSecreta.textContent = "_______";
-
-  // 
+  //
 }
-function compararI
+
+function descubiertosOrdenado(descubiertos) {
+  let x = [];
+  for (letra of descubiertos) {
+    for (let i = 0; i < palabraSecreta.length; i++) {
+      if (letra == palabraSecreta[i]) x[i] = letra;
+    }
+  }
+  
+  return x;
+}
+
+function calcularDescubiertos() {
+  descubierto = "";
+  for (let i = 0; i < palabraSecreta.length; i++) {
+    if (descubiertoArray[i] != undefined) {
+      if (descubiertoArray[i] == palabraSecreta[i]) {
+        descubierto += palabraSecreta[i];
+      } else {
+        descubierto += "_";
+      }
+    } else {
+      descubierto += "_";
+    }
+  }
+  return descubierto;
+}
+function compararArray(arr1, arr2) {
+  let ban = false;
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] != arr2[i]) {
+      ban = false;
+      break;
+    } else {
+      ban = true;
+    }
+  }
+  return ban;
+}
