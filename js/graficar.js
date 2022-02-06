@@ -53,7 +53,7 @@ function graficarAhorcado(vidas) {
               ctx.lineTo(320, 480);
               ctx.stroke();
               if (vidas < 0) {
-                alert("Fin del juego la palabra era " + palabraSecreta);
+                swal("Fin del juego la palabra era " + palabraSecreta);
                 nuevoJuego()
               }
             }

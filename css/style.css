@@ -3,11 +3,26 @@ body {
 }
 canvas {
   margin: 10px;
-  width: 40%;
+  height: auto;
 }
 div {
   margin: 10px;
+  
 }
+input{
+border-radius: 10px 0;
+margin: 5px;
+padding: 10px;
+}
+
+#menu {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  display: inline-flex;
+  justify-content:flex-start;
+  flex-direction:column;
+}
+
 #palabraSecreta {
   text-align: center;
   margin: auto;
@@ -15,11 +30,15 @@ div {
   font-size: 60px;
 }
 #contenedorAhorcado {
-  display: none;
+  display: none; 
 }
 #entradasIncorrectas {
   font-size: 30px;
   color: tomato;
-  
   font-weight: bold;
+}
+.flexbox-container {
+  display: inline-flex;
+  justify-content:flex-start;
+  flex-direction:row;
 }

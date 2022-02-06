@@ -29,8 +29,8 @@ function nuevoJuego() {
   resetGrafico();
   graficarAhorcado(6);
   console.log(palabraSecreta);
-  mostarPalabraSecreta();
   descubiertoArray = [];
+  mostarPalabraSecreta();
   calcularDescubiertos()
 }
 //Sortea palabra secreta aleatoria del array
@@ -49,7 +49,7 @@ function comprobarLetra(letra) {
     mostarPalabraSecreta();
     let palabraSecretaArray = palabraSecreta.split("");
     if(compararArray(palabraSecretaArray,descubiertoArray)){
-      alert("ganaste la palabra secreta era "+ palabraSecreta);
+      swal("ganaste la palabra secreta era "+palabraSecreta);
       nuevoJuego()
     }
   } else {

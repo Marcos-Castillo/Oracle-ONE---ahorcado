@@ -7,18 +7,18 @@
     <title>Ahorcado</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <div>
-      <h1>Ahorcado</h1>
+  <body class="flexbox-container">
+    <div id="menu">
+      <h1 >Ahorcado</h1>
       <input type="button" value="Nuevo Juego" id="nuevaJuego" />
       <input type="button" value="Agregar Palabra" id="nuevaPalabra" />
     </div>
+
     <div id="contenedorAhorcado">
       <canvas id="graficoAhorcado" width="400" height="600"></canvas>
       <div id="contSup">
-        
         <h1 id="palabraSecreta"></h1>
-        <p id="entradasIncorrectas"></p>
+        <h1 id="entradasIncorrectas"></h1>
       </div>
       
     </div>
@@ -27,5 +27,6 @@
     <script src="js/graficar.js"></script>
     <script src="js/validacionIngresos.js"></script>
     <script src="js/logica.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
